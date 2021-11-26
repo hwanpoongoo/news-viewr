@@ -16,13 +16,6 @@ const NewsListBLock = styled.div`
   }
 `;
 
-const sampleArticle = {
-  title: '제목',
-  description: '내용',
-  url: 'https://google.com',
-  urlToImage: 'https://via.placeholder.com/160',
-};
-
 const NewsList = ({ category }) => {
   const [articles, setArticles] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -52,11 +45,12 @@ const NewsList = ({ category }) => {
   if (!articles) {
     return null;
   }
-
+  console.log(articles);
   return (
+    
     <NewsListBLock>
       {articles.map((article) => (
-        <NewsItem key={articles.url} article={article} />
+        <NewsItem key={article.url} article={article} />
       ))}
     </NewsListBLock>
   );
